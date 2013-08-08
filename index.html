@@ -32,7 +32,7 @@
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-            <p><a href="#" id="scan">SCAN SOMETHING!</a></p>
+            <p><a href="#" id="scan" onclick ="barcodeScanner()" >SCAN SOMETHING!</a></p>
             <p id="info"></p>
             <h2>OPENING LINKS:</h2>
             <p><a href="#" onclick="window.open('http://www.nhl.com', '_blank', 'location=yes');">_blank</a></p>
@@ -43,9 +43,26 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
         <script type="text/javascript" src="childbrowser.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            
+            function barcodeScanner(){
+                alert("clicked");
+                var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+
+                scanner.scan(
+                    function (result) {
+                        alert("We got a barcode\n" +
+                        "Result: " + result.text + "\n" +
+                        "Format: " + result.format + "\n" +
+                        "Cancelled: " + result.cancelled);
+                    }, 
+                    function (error) {
+                        alert("Scanning failed: " + error);
+                    }
+                );
+            }
+
+            
         </script>
     </body>
 </html>
