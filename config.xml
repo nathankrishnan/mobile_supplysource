@@ -13,7 +13,7 @@
         PhoneGap Team
     </author>
 
-    <gap:plugin name="com.phonegap.plugins.barcodescanner" version="0.6.0" />
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" version="0.4.0" />
     <gap:plugin name="com.phonegap.plugins.childbrowser" />
 
     <feature name="http://api.phonegap.com/1.0/device" />
