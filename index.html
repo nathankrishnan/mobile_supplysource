@@ -29,6 +29,11 @@
              <div data-role="content">      
                     <a href="#" data-role="button" data-transition="flow" style="position: absolute; top: 50%; left:25%; width: 50%; margin-top: -1.2em;" onclick="barcodeScanner()">SCAN ITEM</a>
 
+                    <a href="#popupBasic" data-rel="popup" data-role="button" data-inline="true" data-transition="flow">Scan Test</a>
+                    <div data-role="popup" id="popupBasic" onclick="barcodeScanner()">
+                    <p>Launching barcode scanner...</p>
+                    </div>
+
              </div>
         </div> 
 
@@ -39,7 +44,8 @@
         <script type="text/javascript" src="barcodescanner.js"></script>
         <script type="text/javascript">
             function barcodeScanner(){
-                alert("clicked");
+                // Temporarily disabiling alert test since scanner is working
+                // alert("clicked");
                 var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
                 scanner.scan(
