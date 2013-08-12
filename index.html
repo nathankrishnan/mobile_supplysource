@@ -21,28 +21,32 @@
         <!-- Home screen -->
         <div data-role="page" id="home" data-theme="b"> 
              <div data-role="panel" id="panel" data-position="right" data-display="push"></div>
-             <div data-role="header" data-theme="b"> 
+             
+             <!-- Header -->
+             <div data-role="header" data-theme="b" data-position="fixed"> 
                    <h1>Supply Source</h1> 
                    <!-- Sliding Panel -->
                    <a data-iconpos="notext" href="#panel" data-role="button" class="ui-btn-right" data-icon="flat-menu"></a>
              </div> 
+             
              <div data-role="content">      
                     <a href="#" data-role="button" data-transition="flow" style="position: absolute; top: 50%; left:25%; width: 50%; margin-top: -1.2em;" onclick="barcodeScanner()">SCAN ITEM</a>
-
              </div>
-             <div data-role="fieldcontain">
-                <div data-role="controlgroup" data-type="horizontal" data-position="center" >
-                    <a href="#" data-icon="flat-mail" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
-                    <a href="#" data-icon="flat-camera" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
-                    <a href="#" data-icon="flat-heart" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
-                    <a href="#" data-icon="flat-eye" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
-                </div>
+            
+            <!-- Footer -->
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <center>
+                    <div data-role="controlgroup" data-type="horizontal">
+                      <a href="#" data-icon="flat-mail" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+                      <a href="#" data-icon="flat-camera" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+                      <a href="#" data-icon="flat-heart" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+                      <a href="#" data-icon="flat-eye" data-theme="a" data-iconpos="notext" data-role="button">Yes</a>
+                    </div>
+                </center>
             </div>
 
+
         </div> 
-
-
-
  
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
