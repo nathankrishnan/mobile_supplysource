@@ -55,7 +55,7 @@ body {
     /* color: #fff; */
 }
 
-img{
+#circlethumbnail{
     position:absolute;
     top:-50px;
     left: 83px;
