@@ -111,8 +111,7 @@
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="barcodescanner.js"></script>
-        <script type="text/javascript">
-            
+        <script type="text/javascript">            
 
 
             function serverRequest(recordId){
@@ -135,7 +134,6 @@
                 });
             }
 
-
             function barcodeScanner(){
                 // Temporarily disabiling alert test since scanner is working
                 // alert("clicked");
@@ -143,15 +141,21 @@
 
                 scanner.scan(
                     function (result) {
+
                         scanResult = result.text;
                         serverRequest(scanResult);
+
+                        alert("We got a barcode\n" +
+                        "Result: " + result.text + "\n" +
+                        "Format: " + result.format + "\n" +
+                        "Cancelled: " + result.cancelled);
+
                     }, 
                     function (error) {
                         alert("Scanning failed: " + error);
                     }
                 );
             }
-
 
         </script> 
 
