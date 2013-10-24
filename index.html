@@ -37,7 +37,7 @@
              <div data-role="header" data-theme="b" data-position="fixed"> 
                    <h1>Supply Source</h1> 
                    <!-- Barcode scanner icon -->
-                   <a data-iconpos="notext" href="#" data-role="button" class="ui-btn-right" data-icon="flat-camera" onclick="serverRequest()"></a>
+                   <a data-iconpos="notext" href="#" data-role="button" class="ui-btn-right" data-icon="flat-camera" onclick="barcodeScanner()"></a>
 
                    <!-- Sliding Panel -->
                    <a data-iconpos="notext" href="#panel" data-role="button" class="ui-btn-left" data-icon="flat-menu"></a>
@@ -114,10 +114,10 @@
         <script type="text/javascript">            
 
 
-            function serverRequest(){
+            function serverRequest(recordID){
                 //alert('asdf');
                 $.ajax({
-                    url: 'http://dry-bayou-7910.herokuapp.com/renderjson/' + '3' + '?callback=jsoncallback',
+                    url: 'http://dry-bayou-7910.herokuapp.com/renderjson/' + recordID + '?callback=jsoncallback',
                     //url: 'localhost:3000/renderjson',
                     type: "GET",
                     dataType: 'jsonp',
@@ -143,12 +143,10 @@
                     function (result) {
 
                         scanResult = result.text;
+                        alert(scanResult);
+
                         serverRequest(scanResult);
 
-                        alert("We got a barcode\n" +
-                        "Result: " + result.text + "\n" +
-                        "Format: " + result.format + "\n" +
-                        "Cancelled: " + result.cancelled);
 
                     }, 
                     function (error) {
