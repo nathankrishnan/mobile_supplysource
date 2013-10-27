@@ -9,11 +9,14 @@ ul.now {
     height: 100%;
     float: left;
     padding: 0;
+    /* min-width:100%; */
 }
 ul.now li {
     float: left;
     list-style: none;
     padding: 10px;
+    /* Fix for Android width */
+    min-width:94.3%; 
 }
 div.card {
     background: #fff;
